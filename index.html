@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <body>
+            <h1> otp generation</h1>
+            <script>
+                function generateOTP(length) {
+  const digits = '0123456789';
+  let OTP = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomNumber = Math.floor(Math.random() * digits.length);
+
+    // To generate an OTP using addition and subtraction
+    if (i % 2 === 0) {
+      OTP += String.fromCharCode(digits.charCodeAt(randomNumber) + i);
+    } else {
+      OTP += String.fromCharCode(digits.charCodeAt(randomNumber) - i);
+    }
+  }
+
+  return OTP;
+}
+
+// Generate a 6-digit OTP
+const otp = generateOTP(6);
+console.log('Generated OTP:', otp);
+
+            </script>
+        </body>
+    </head>
+</html>
